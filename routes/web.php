@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route:: get ('/home',[Homecontroller::class,'index'])->middleware(['auth:sanctum','verified']);
 Route:: get ('/dashboard',[Homecontroller::class,'dashboard'])->name('dashboard')->middleware(['auth:sanctum','verified']);
+Route::resource('berita',BeritaController::class) ->middleware(['auth:sanctum','verified']);;
